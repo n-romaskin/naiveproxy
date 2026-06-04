@@ -1,7 +1,8 @@
 FROM caddy:2-builder AS builder
 
+# Явно указываем версию и добавляем плагин
 RUN xcaddy build \
-    --with github.com/caddyserver/forwardproxy
+    --with github.com/caddyserver/forwardproxy@latest
 
 FROM caddy:2-alpine
 
