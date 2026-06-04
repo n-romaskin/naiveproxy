@@ -1,8 +1,10 @@
 FROM caddy:2-builder AS builder
 
-# Явно указываем версию и добавляем плагин
+# Force rebuild - change this line to force new build
+# Last changed: 2025-06-04
+
 RUN xcaddy build \
-    --with github.com/caddyserver/forwardproxy@latest
+    --with github.com/caddyserver/forwardproxy
 
 FROM caddy:2-alpine
 
