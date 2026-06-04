@@ -1,8 +1,6 @@
 FROM caddy:2-builder AS builder
 
-RUN --mount=type=cache,target=/go/pkg/mod \
-    --mount=type=cache,target=/root/.cache/go-build \
-    xcaddy build \
+RUN xcaddy build \
     --with github.com/caddyserver/forwardproxy
 
 FROM caddy:2-alpine
