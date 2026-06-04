@@ -1,6 +1,6 @@
 {
 	admin off
-	order forward_proxy before file_server
+	#order forward_proxy before file_server
 	log {
 		output file /var/log/caddy/access.log {
 			roll_size 5mb
